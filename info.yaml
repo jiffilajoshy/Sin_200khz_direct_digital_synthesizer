@@ -15,7 +15,7 @@ project:
 
   # List project sources (each file inside ./src)
   source_files:
-    - "Sin_200khz_direct_digital_synthesizer.v"
+    - "tt_um_Sin_200khz_direct_digital_synthesizer.v"
 
 # Pinout for documentation (leave blank if unused)
 pinout:
