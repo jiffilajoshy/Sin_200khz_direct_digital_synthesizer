@@ -1,28 +1,24 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "200 kHz Direct Digital Sine Wave Synthesizer"
+  author:       "JIFFIL A JOSHY"
+  discord:      ""      # optional
+  description:  "Generates an 8-bit sine wave at 200 kHz using a 15-entry DDS LUT."
+  language:     "Verilog"
+  clock_hz:     3000000   # 3 MHz input clock
 
-  # How many tiles your design occupies? A single tile is about 340x160 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 3x4 or 4x4
+  # Layout usage
+  tiles: "1x1"
 
-  # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  # Top-level module (must start with tt_um_)
+  top_module:  "tt_um_Sin_200khz_direct_digital_synthesizer"
 
-  # List your project's source files here.
-  # Source files must be in ./src and you must list each source file separately, one per line.
-  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
+  # List project sources (each file inside ./src)
   source_files:
-    - "project.v"
+    - "Sin_200khz_direct_digital_synthesizer.v"
 
-# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
-# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+# Pinout for documentation (leave blank if unused)
 pinout:
-  # Inputs
   ui[0]: ""
   ui[1]: ""
   ui[2]: ""
@@ -32,15 +28,15 @@ pinout:
   ui[6]: ""
   ui[7]: ""
 
-  # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  # Outputs (sine wave appears on uo[7:0])
+  uo[0]: "SINE_OUT[0]"
+  uo[1]: "SINE_OUT[1]"
+  uo[2]: "SINE_OUT[2]"
+  uo[3]: "SINE_OUT[3]"
+  uo[4]: "SINE_OUT[4]"
+  uo[5]: "SINE_OUT[5]"
+  uo[6]: "SINE_OUT[6]"
+  uo[7]: "SINE_OUT[7]"
 
   # Bidirectional pins
   uio[0]: ""
